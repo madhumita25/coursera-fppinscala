@@ -1,0 +1,46 @@
+/*
+    var x = this.mostRetweeted
+    var ans = new Cons(x, Nil)
+    var newSet = this.remove(x)
+    while ((!newSet.isEmptySet) && (!x.text.isEmpty)) {
+      x = newSet.mostRetweeted
+      println(x)
+      ans = new Cons(x, ans)
+      newSet = newSet.remove(x)
+    }
+    ans */
+
+
+        val emptyTweet = new Tweet("","",0)
+        val leftmax= if (!this.left.isEmptySet) this.left.mostRetweeted else emptyTweet
+        val rightmax= if (!this.right.isEmptySet) this.right.mostRetweeted else emptyTweet
+        val max = findMax(elem.retweets, leftmax.retweets, rightmax.retweets)
+        if (elem.retweets == max) this.elem
+        if (leftmax.retweets == max) leftmax
+        else rightmax
+
+
+            val leftmax= this.left.mostRetweeted
+            val rightmax= this.right.mostRetweeted
+            val max = findMax(elem.retweets, leftmax.retweets, rightmax.retweets)
+
+            if (elem.retweets == max) elem
+            if (leftmax.retweets == max) leftmax
+            else rightmax
+
+
+                val leftmax= this.left.mostRetweeted
+                val rightmax= this.right.mostRetweeted
+                val max = findMax(elem.retweets, leftmax.retweets, rightmax.retweets)
+
+                if (elem.retweets == max) elem
+                if (leftmax.retweets == max) leftmax
+                else rightmax
+
+
+
+
+  def findMax (a:Int, b:Int, c:Int): Int = {
+    if (a >= b) if (a > c) a else c
+    if (b >= c) b else c
+  }
