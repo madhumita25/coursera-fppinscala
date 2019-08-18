@@ -1,0 +1,10 @@
+.reduce((accumulatedValue: List[(Char, Int)], currentValue: (Char, Int)) => {
+
+      val accumAsMap = accumulatedValue.toMap
+
+      accumAsMap.get(currentValue._1) match {
+
+        case Some(value: Int) => (accumAsMap + (currentValue._1 -> (value + 1))).toList
+
+        case None => currentValue :: accumulatedValue
+      }
